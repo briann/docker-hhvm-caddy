@@ -2,5 +2,9 @@
 gzip
 root /var/www/public
 index index.php
+rewrite / {
+    regexp .*
+    to /index.php{uri}
+}
 ext .php
 fastcgi / 127.0.0.1:9000 php
